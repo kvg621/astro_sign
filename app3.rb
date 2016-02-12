@@ -1,23 +1,34 @@
-hh={}
 
-def set_age h,name, age
-h[ name ] = age
-  # добавляем в хэш
+class Person
+
+  def initialize
+    @hh={}
+  end
+
+  def add_person name, age
+    @hh[name] = age
+    # добавляем в хэш
+  end
+
+  def show_hash
+  puts @hh
+  end
 end
 
-def show_hash h
-puts h
-end
+pers=Person.new
 
-loop do
+  loop do
+    puts "name?"
+    name=gets.chomp
+    #puts "allredy exist" if hh[name]
+    break if name==""
+    puts "age?"
+    age=gets.chomp
+    break if age==""
+    pers.add_person name,age
+    # добавлять пока не введена пустая строка
+   end
 
-  puts "name?"
-  name=gets.chomp
-  break if name==""
-  puts "age?"
-  age=gets.chomp
-  break if age==""
-  set_age hh,name,age
-  # добавлять пока не введена пустая строка
-end
-show_hash hh
+
+pers.show_hash
+

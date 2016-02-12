@@ -10,4 +10,7 @@ hh={
     :age => '65',
     :address => '123 West Street'
 }
+
+
+
 print_details hh
